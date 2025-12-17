@@ -33,19 +33,19 @@ export default function Settings() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="firstName">First Name</Label>
-                    <Input id="firstName" defaultValue="Sarah" />
+                    <Input id="firstName" defaultValue="Marian" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="lastName">Last Name</Label>
-                    <Input id="lastName" defaultValue="Chen" />
+                    <Input id="lastName" defaultValue="Banica" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" defaultValue="sarah.chen@example.com" />
+                    <Input id="email" type="email" defaultValue="marian.banica@example.com" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone</Label>
-                    <Input id="phone" defaultValue="+1 (555) 123-4567" />
+                    <Input id="phone" defaultValue="+40 722 123 456" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="dob">Date of Birth</Label>
@@ -53,7 +53,7 @@ export default function Settings() {
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="patientId">Patient ID</Label>
-                    <Input id="patientId" defaultValue="HW-2024-001" disabled />
+                    <Input id="patientId" defaultValue="FC-2024-001" disabled />
                   </div>
                 </div>
               </div>
@@ -146,13 +146,27 @@ export default function Settings() {
 
           <TabsContent value="privacy">
             <div className="bg-card rounded-xl p-6 shadow-card space-y-6 animate-slide-in">
+              {/* GDPR Banner */}
+              <div className="p-4 rounded-lg bg-info/10 border border-info/20">
+                <div className="flex items-start gap-3">
+                  <Shield className="w-5 h-5 text-info mt-0.5" />
+                  <div>
+                    <p className="font-medium text-foreground">GDPR Compliant Data Protection</p>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      Your health data is processed in accordance with EU General Data Protection Regulation (GDPR). 
+                      You have the right to access, rectify, erase, and port your personal data.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
               <div>
-                <h3 className="font-semibold text-foreground mb-4">Data Sharing</h3>
+                <h3 className="font-semibold text-foreground mb-4">Consent Management</h3>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between p-4 rounded-lg bg-secondary/50">
                     <div>
                       <p className="font-medium text-foreground">Share with Primary Physician</p>
-                      <p className="text-sm text-muted-foreground">Dr. Sarah Martinez can access your data</p>
+                      <p className="text-sm text-muted-foreground">Dr. Alexandru Burtic can access your health data</p>
                     </div>
                     <Switch defaultChecked />
                   </div>
@@ -166,7 +180,14 @@ export default function Settings() {
                   <div className="flex items-center justify-between p-4 rounded-lg bg-secondary/50">
                     <div>
                       <p className="font-medium text-foreground">Anonymous Research Data</p>
-                      <p className="text-sm text-muted-foreground">Contribute anonymized data for research</p>
+                      <p className="text-sm text-muted-foreground">Contribute anonymized data for medical research (Art. 89 GDPR)</p>
+                    </div>
+                    <Switch />
+                  </div>
+                  <div className="flex items-center justify-between p-4 rounded-lg bg-secondary/50">
+                    <div>
+                      <p className="font-medium text-foreground">Marketing Communications</p>
+                      <p className="text-sm text-muted-foreground">Receive health tips and product updates</p>
                     </div>
                     <Switch />
                   </div>
@@ -174,15 +195,50 @@ export default function Settings() {
               </div>
 
               <div className="pt-4 border-t border-border">
-                <h3 className="font-semibold text-foreground mb-4">Data Management</h3>
-                <div className="space-y-3">
-                  <Button variant="outline" className="w-full justify-start">
-                    Export My Data
+                <h3 className="font-semibold text-foreground mb-4">Your GDPR Rights</h3>
+                <div className="grid grid-cols-2 gap-3">
+                  <Button variant="outline" className="justify-start gap-2">
+                    <Globe className="w-4 h-4" />
+                    Request Data Access
                   </Button>
-                  <Button variant="outline" className="w-full justify-start text-destructive hover:text-destructive">
-                    Delete All Data
+                  <Button variant="outline" className="justify-start gap-2">
+                    <User className="w-4 h-4" />
+                    Rectify My Data
+                  </Button>
+                  <Button variant="outline" className="justify-start gap-2">
+                    Export My Data (Portability)
+                  </Button>
+                  <Button variant="outline" className="justify-start gap-2">
+                    Processing Restriction
                   </Button>
                 </div>
+              </div>
+
+              <div className="pt-4 border-t border-border">
+                <h3 className="font-semibold text-foreground mb-4">Data Retention & Deletion</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Your data is retained for the duration specified in our privacy policy. You can request complete erasure at any time.
+                </p>
+                <div className="space-y-3">
+                  <Button variant="outline" className="w-full justify-start">
+                    View Data Retention Policy
+                  </Button>
+                  <Button variant="outline" className="w-full justify-start text-destructive hover:text-destructive">
+                    Request Data Erasure (Right to be Forgotten)
+                  </Button>
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-border">
+                <h3 className="font-semibold text-foreground mb-4">Consent History</h3>
+                <div className="text-sm text-muted-foreground space-y-2">
+                  <p>• Initial consent given: January 15, 2024</p>
+                  <p>• Last consent update: December 10, 2024</p>
+                  <p>• Data Processing Agreement: Active</p>
+                </div>
+                <Button variant="link" className="p-0 mt-2 h-auto text-primary">
+                  Download Full Consent Log
+                </Button>
               </div>
             </div>
           </TabsContent>

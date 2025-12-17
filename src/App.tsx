@@ -7,6 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import Nutrition from "./pages/Nutrition";
 import Stress from "./pages/Stress";
 import Sleep from "./pages/Sleep";
+import Learning from "./pages/Learning";
 import Devices from "./pages/Devices";
 import Notifications from "./pages/Notifications";
 import Settings from "./pages/Settings";
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/nutrition" element={<Nutrition />} />
           <Route path="/stress" element={<Stress />} />
           <Route path="/sleep" element={<Sleep />} />
+          <Route path="/learning" element={<Learning />} />
           <Route path="/devices" element={<Devices />} />
           <Route path="/notifications" element={<Notifications />} />
           <Route path="/settings" element={<Settings />} />

@@ -31,7 +31,7 @@ const notifications = [
     id: 4, 
     type: 'pending', 
     title: 'Weekly Report Ready', 
-    message: 'Your health summary has been sent to Dr. Martinez.',
+    message: 'Your health summary has been sent to Dr. Alexandru Burtic.',
     time: '1 day ago',
     sentToMedic: true
   },
