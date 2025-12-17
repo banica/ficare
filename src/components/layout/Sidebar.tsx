@@ -12,7 +12,8 @@ import {
   ChevronRight,
   Heart,
   User,
-  LogOut
+  LogOut,
+  GraduationCap
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -21,6 +22,7 @@ const navItems = [
   { icon: Apple, label: 'Nutrition', path: '/nutrition' },
   { icon: Brain, label: 'Stress Management', path: '/stress' },
   { icon: Moon, label: 'Sleep', path: '/sleep' },
+  { icon: GraduationCap, label: 'Prevention Learning', path: '/learning' },
   { icon: Cpu, label: 'IoT Devices', path: '/devices' },
   { icon: Bell, label: 'Notifications', path: '/notifications' },
   { icon: Settings, label: 'Settings', path: '/settings' },
@@ -45,7 +47,7 @@ export function Sidebar() {
           </div>
           {!collapsed && (
             <span className="font-semibold text-sidebar-foreground text-lg animate-fade-in">
-              HealthWallet
+              Fi Care
             </span>
           )}
         </div>
@@ -87,8 +89,8 @@ export function Sidebar() {
           </div>
           {!collapsed && (
             <div className="flex-1 min-w-0 animate-fade-in">
-              <p className="text-sm font-medium text-sidebar-foreground truncate">Dr. Sarah Chen</p>
-              <p className="text-xs text-sidebar-muted truncate">Patient ID: HW-2024-001</p>
+              <p className="text-sm font-medium text-sidebar-foreground truncate">Marian Banica</p>
+              <p className="text-xs text-sidebar-muted truncate">Patient ID: FC-2024-001</p>
             </div>
           )}
         </div>
